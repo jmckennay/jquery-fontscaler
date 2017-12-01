@@ -17,6 +17,7 @@ $.fn.fontScale = function(text, font, maxLines) {
     var containerWidth = parseFloat(this.width());
     var lineEstimate = textWidth/containerWidth;
     maxLines = maxLines || this.data('maxlines') || 3;
+    if(maxLines>1) maxLines-=0.5;
     if(lineEstimate > maxLines){
         var fontSize = parseFloat(this.css('font-size').replace('px',''));
         fontSize = fontSize * ((maxLines*.9)/lineEstimate) + 'px';
